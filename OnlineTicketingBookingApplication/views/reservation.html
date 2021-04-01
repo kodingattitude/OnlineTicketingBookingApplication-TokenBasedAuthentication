@@ -1,0 +1,72 @@
+﻿<section>
+    <div class="container">
+        <!--<div class="row col-md-2">
+            <table class="table table-responsive">
+                <tr ng-repeat="s in Seats">
+                    <td ng-disable="s.IsSelected">{{s.seat}}</td>
+                </tr>
+            </table>
+        </div>-->
+        <div class="row">
+            <div class="col-md-1 icon-box" ng-repeat="s in Seats">
+                <div class="row">
+                    <img class="img-responsive img-thumbnail m-b-20" ng-src="{{s.image}}" style="margin:auto;height:50px;width:50px"
+                         ng-disabled="s.IsDisabled"
+                         ng-click="s.IsDisabled || SelectedSeats(s)"
+                        ng-style="borderstyle(s)"
+                          />
+                    <!--ng-class="{ 'selected-seat': s.selected }"-->
+                    <!--ng-click="selected_seats[s.seat] = {selected: !selected_seats[s.seat].selected }" 
+                        ng-class="{ 'selected-seat': selected_seats[s.seat].selected }"-->
+                </div>
+                
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <b> Selected Seat No.s : {{selected_seats}} </b>
+        </div>
+        <div class="row top-buffer">
+           <table>
+               <tr>
+                   <td>No. Of Seats Selected :</td>
+                   <td align="right">{{SelectedSeatsCount}}</td>
+               </tr>
+               <tr>
+                   <td>Price :</td>
+                   <td align="right">{{seatprice}}</td>
+               </tr>
+               <tr>
+                   <td>SGST 9% :</td>
+                   <td align="right">{{SGST}}</td>
+               </tr>
+               <tr>
+                   <td>CGST 9% :</td>
+                   <td align="right">{{CGST}}</td>
+               </tr>
+               <tr>
+                   <td>IGST 0% :</td>
+                   <td align="right">{{IGST}}</td>
+               </tr>
+               <tr>
+                   <td>Total Prices :</td>
+                   <td align="right">{{TotalPrice}}</td>
+               </tr>
+           </table>
+
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4" style="align-items:center">
+                <input type="button" class="btn btn-primary" name="selectbutton" value="Submit" ng-click="SubmitSelectedSeats()" />
+            </div>
+            <div class="col-md-4">
+            </div>
+
+        </div>
+        <div class="row" style="align-content:center">
+            <span style="color:red">{{ReservationErrorMessage}}</span>
+
+        </div>
+    </div>
+</section>
