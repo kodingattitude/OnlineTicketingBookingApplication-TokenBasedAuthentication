@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -261,6 +262,9 @@
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DictionaryExtension.cs" />
+    <Compile Include="EmployeeDetail.cs">
+      <DependentUpon>SampleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,30 +279,30 @@
     <Compile Include="Repository\LoginRepository.cs" />
     <Compile Include="Repository\ReservationRepository.cs" />
     <Compile Include="Reservation.cs">
-      <DependentUpon>TicketBooking.tt</DependentUpon>
+      <DependentUpon>SampleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Role.cs">
-      <DependentUpon>TicketBooking.tt</DependentUpon>
+      <DependentUpon>SampleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SampleDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="TicketBooking.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TicketBooking.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TicketBooking.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TicketBooking.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TicketBooking.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TicketBooking.edmx</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>TicketBooking.tt</DependentUpon>
+      <DependentUpon>SampleDB.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +312,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="SampleDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDB.edmx</DependentUpon>
+      <LastGenOutput>SampleDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SampleDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDB.edmx</DependentUpon>
+      <LastGenOutput>SampleDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -334,6 +348,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EntityDeploy Include="SampleDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="SampleDB.edmx.diagram">
+      <DependentUpon>SampleDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -345,16 +366,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="TicketBooking.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TicketBooking.edmx</DependentUpon>
-      <LastGenOutput>TicketBooking.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TicketBooking.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TicketBooking.edmx</DependentUpon>
-      <LastGenOutput>TicketBooking.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -370,13 +381,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <EntityDeploy Include="TicketBooking.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TicketBooking.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="TicketBooking.edmx.diagram">
-      <DependentUpon>TicketBooking.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

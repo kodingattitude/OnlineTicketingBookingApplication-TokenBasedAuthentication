@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\chaitanya.kasani\Source\Repos\Karvy Pay\OnlineTicketingBookingApplication\WebApi-TicketBookingApplication\TicketBooking.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\ChaitanyaKiran\ChaitanyaKiran11\ChaitanyaKiran\ChaitanyaKiran\DEMO\OnlineTicketingBookingApplication-TokenBasedAuthentication\WebApi-TicketBookingApplication\SampleDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

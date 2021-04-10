@@ -16,7 +16,7 @@ namespace WebApi_TicketBookingApplication
     public partial class TicketBookingDB : DbContext
     {
         public TicketBookingDB()
-            : base("name=TicketBookingDB")
+            : base("name=SampleDBEntities")
         {
         }
     
@@ -25,8 +25,9 @@ namespace WebApi_TicketBookingApplication
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<EmployeeDetail> EmployeeDetails { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Reservation> Reservations { get; set; }
     }
 }
