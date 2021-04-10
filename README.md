@@ -1,4 +1,4 @@
-# OnlineTicketingBookingApplication-TokenBasedAuthentication
+# AngularJS-OnlineTicketingBookingApplication-TokenBasedAuthentication
 Frontend is AngularJS.
 Backend is WebAPI with Token Based Authentication.
 Database is SQL Server.
